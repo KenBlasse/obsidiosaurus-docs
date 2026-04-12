@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Obsidiosaurus Blog</title>
+        <link>https://kenblasse.github.io/obsidiosaurus-docs/de/release_notes</link>
+        <description>Obsidiosaurus Blog</description>
+        <lastBuildDate>Sat, 01 Jul 2023 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>de</language>
+        <item>
+            <title><![CDATA[v0.3.0]]></title>
+            <link>https://kenblasse.github.io/obsidiosaurus-docs/de/release_notes/2023/07/01/_0.3</link>
+            <guid>https://kenblasse.github.io/obsidiosaurus-docs/de/release_notes/2023/07/01/_0.3</guid>
+            <pubDate>Sat, 01 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[I am excited to announce the first preview version of Obsidiosaurus  as Plugin for Obsidian.md]]></description>
+            <content:encoded><![CDATA[<p>I am excited to announce the first preview version of <strong>Obsidiosaurus </strong> as Plugin for Obsidian.md</p><p>Test</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-currently-supported">What is currently supported?<a href="#what-is-currently-supported" class="hash-link" aria-label="Direkter Link zur What is currently supported?" title="Direkter Link zur What is currently supported?">​</a></h2><h3 class="anchor anchorWithStickyNavbar_LWe7" id="general">General<a href="#general" class="hash-link" aria-label="Direkter Link zur General" title="Direkter Link zur General">​</a></h3><ul><li>Documentation: ✅</li><li>Blog: ✅ </li><li>Multiple Blogs: ✅ </li><li>Localisation i18n: ✅</li><li>Multiple Sidebars: ✅</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="standard-formating">Standard Formating<a href="#standard-formating" class="hash-link" aria-label="Direkter Link zur Standard Formating" title="Direkter Link zur Standard Formating">​</a></h3><ul><li>Links: ✅</li><li>Tables: ✅</li><li>Admonitions/Callouts: ✅</li><li>Quotes: ✅</li><li>iFrames: ✅</li><li>Codeblocks: ✅</li><li>Head Metadata: ✅</li><li>Checklists: ✅</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="assets">Assets<a href="#assets" class="hash-link" aria-label="Direkter Link zur Assets" title="Direkter Link zur Assets">​</a></h3><ul><li>Images: ✅ (.png &amp; .svg)<ul><li>Image resize: ✅</li><li>Image converter: ✅ (.webp) </li></ul></li><li>File download: ✅ (.pdf, .docx, ..)</li></ul><h3 class="anchor anchorWithStickyNavbar_LWe7" id="drawings--diagrams">Drawings &amp; Diagrams<a href="#drawings--diagrams" class="hash-link" aria-label="Direkter Link zur Drawings &amp; Diagrams" title="Direkter Link zur Drawings &amp; Diagrams">​</a></h3><ul><li>Excalidraw: ✅ (light &amp; dark mode)</li><li>diagrams.net ✅ (light &amp; dark mode)</li><li>Math Equations: ✅ (with <a href="https://docusaurus.io/docs/markdown-features/math-equations#usage" target="_blank" rel="noopener noreferrer">Docusaurus Plugin)</a></li><li>Mermaid: ✅ (with <a href="https://docusaurus.io/docs/markdown-features/diagrams#configuration" target="_blank" rel="noopener noreferrer">Docusaurus Plugin)</a></li></ul><h2 class="anchor anchorWithStickyNavbar_LWe7" id="known-issues">Known Issues:<a href="#known-issues" class="hash-link" aria-label="Direkter Link zur Known Issues:" title="Direkter Link zur Known Issues:">​</a></h2><p>When renaming files and folders in Obsidian, it doesn't delete the outdated files from your Docusaurus files.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
