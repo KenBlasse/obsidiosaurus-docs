@@ -23,4 +23,4 @@ To open the console press:
 Afterwards select `Console` at the top:
 ![](assets/obsidian_console.png)
 
-Feel free to post your Logs on [Github Issues](https://github.com/CIMSTA/obsidiosaurus/issues) or the [CIMSTA Discord](https://discord.com/invite/SSGK5tuqJh)for additional help.
+Feel free to post your logs on [GitHub Issues](https://github.com/KenBlasse/obsidiosaurus/issues) for additional help.
