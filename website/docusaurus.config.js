@@ -101,26 +101,18 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      mermaid: {
-        theme: {light: 'neutral', dark: 'dark'},
-      },
     }),
 
-    plugins: [
-      [
-        '@docusaurus/plugin-content-blog',
-        {
-          id: 'release_notes',
-          routeBasePath: 'release_notes',
-          path: './release_notes__blog',
-        },
-        
-      ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'release_notes',
+        routeBasePath: 'release_notes',
+        path: './release_notes__blog',
+      },
     ],
-    markdown: {
-      mermaid: true,
-    },
-    themes: ['@docusaurus/theme-mermaid'],
+  ],
 };
 
 
