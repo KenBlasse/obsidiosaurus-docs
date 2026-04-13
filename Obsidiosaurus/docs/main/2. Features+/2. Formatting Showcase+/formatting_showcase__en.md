@@ -273,10 +273,10 @@ Multi-line comments are also filtered:
 ## Images
 
 ### Standard image
-![Obsidiosaurus Logo](assets/obsidiosaurus_sidebar_icon.png)
+![[obsidiosaurus_sidebar_icon.png]]
 
 ### Resized image
-![|400](assets/obsidiosaurus_run_sucess_notifaction_2.png)
+![[obsidiosaurus_run_sucess_notifaction_2.png|400]]
 
 ---
 
