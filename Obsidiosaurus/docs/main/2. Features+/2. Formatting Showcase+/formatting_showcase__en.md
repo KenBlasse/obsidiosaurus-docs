@@ -14,7 +14,7 @@ This page demonstrates every formatting feature supported by Obsidiosaurus v1.1.
 
 ~~Strikethrough~~ — `~~text~~`
 
-==Highlighted text== — `==text==` (converted to `<mark>`)
+Highlighting: ==Highlighted text== — syntax `==text==` (converted to `<mark>`)
 
 `Inline code` — `` `code` ``
 
