@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6431],{3031:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"v0.3.0","permalink":"/obsidiosaurus-docs/de/release_notes/2023/07/01/_0.3"}]}')}}]);
