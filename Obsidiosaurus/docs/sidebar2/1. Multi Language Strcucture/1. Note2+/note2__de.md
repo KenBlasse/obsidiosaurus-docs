@@ -1,5 +1,0 @@
-# Multi - Note 2
-
-## German
-
-Beispiel Seite

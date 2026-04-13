@@ -37,9 +37,7 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -73,13 +71,6 @@ const config = {
             position: 'left',
             label: 'Main',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'sidebar2',
-            position: 'left',
-            label: 'Sidebar 2*',
-          },
-          {to: '/blog', label: 'Blog*', position: 'left'},
           {to: '/release_notes', label: 'Release Notes', position: 'left'},
           {
             type: 'localeDropdown',
