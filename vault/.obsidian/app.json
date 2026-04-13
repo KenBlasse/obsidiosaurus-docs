@@ -1,9 +1,0 @@
-{
-  "useMarkdownLinks": true,
-  "newLinkFormat": "absolute",
-  "attachmentFolderPath": "assets",
-  "promptDelete": false,
-  "alwaysUpdateLinks": true,
-  "newFileLocation": "current",
-  "livePreview": true
-}

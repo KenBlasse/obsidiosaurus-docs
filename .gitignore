@@ -3,4 +3,9 @@
 allSourceAssetsInfo.json
 allFilesInfo.json
 assetInfo.json
-.obsidian/
+**/.obsidian/
+
+
+
+# Ignore Smart Environment folder
+.smart-env

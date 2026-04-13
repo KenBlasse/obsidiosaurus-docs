@@ -8,12 +8,10 @@ Obsidiosaurus fungiert als **Brücke**, die deinen Obsidian Vault mit dem Seiten
 
 Er übersetzt die spezielle Markdown-Syntax von Obsidian und konvertiert deine Dateien so, dass Docusaurus sie direkt übernehmen kann.
 
-:::danger Entwicklungsversion
-
-Zurzeit befindet sich das Tool in einer Entwicklungsversion.
-## Sichere immer deine wichtigen Notizen!
-## Rechne mit Fehlern und Änderungen!
-:::
+>[!danger] Entwicklungsversion
+>Zurzeit befindet sich das Tool in einer Entwicklungsversion.
+>## Sichere immer deine wichtigen Notizen!
+>## Rechne mit Fehlern und Änderungen!
 
 ## Grundlegende Funktionen
 
