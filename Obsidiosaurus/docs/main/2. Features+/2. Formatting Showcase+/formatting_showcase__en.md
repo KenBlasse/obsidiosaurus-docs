@@ -272,10 +272,12 @@ Multi-line comments are also filtered:
 
 ## Images
 
+Obsidiosaurus converts images to `.webp` and handles resizing automatically.
+
 ### Standard image
 ![[obsidiosaurus_sidebar_icon.png]]
 
-### Resized image
+### Resized image (400px width)
 ![[obsidiosaurus_run_sucess_notifaction_2.png|400]]
 
 ---
