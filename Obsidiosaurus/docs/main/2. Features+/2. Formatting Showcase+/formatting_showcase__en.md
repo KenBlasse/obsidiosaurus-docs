@@ -258,15 +258,32 @@ Content below
 
 ## Comments (Obsidian-only)
 
-%% This comment is visible in Obsidian but removed during conversion. %%
+Comments are written with `%% ... %%` and are **removed during conversion** — they never appear on the website.
 
-The paragraph below the comment is rendered normally.
+Inline syntax:
+```
+%% This is an inline comment %%
+```
+
+Block syntax:
+```
+%%
+This is a
+multi-line comment
+%%
+```
+
+%% Inline comment — this text is removed %%
+
+The text above is an inline comment in Obsidian. It is not visible here.
 
 %% 
-Multi-line comments are also filtered:
+Block comment — this is also removed:
 - line one
 - line two
 %%
+
+The text above is a block comment in Obsidian. It is also not visible here.
 
 ---
 
