@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([["220"],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/obsidiosaurus-docs/de/release-notes","blogTitle":"Blog","authorsListPath":"/obsidiosaurus-docs/de/release-notes/authors"}')}}]);

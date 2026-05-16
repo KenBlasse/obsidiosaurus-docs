@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([["610"],{6719(e){e.exports=JSON.parse('{"metadata":{"permalink":"/obsidiosaurus-docs/de/release-notes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
