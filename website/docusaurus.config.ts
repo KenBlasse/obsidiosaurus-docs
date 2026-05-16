@@ -7,34 +7,25 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Obsidiosaurus',
+  tagline: 'Obsidian + Docusaurus = where your notes meet the web',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  url: 'https://kenblasse.github.io',
+  baseUrl: '/obsidiosaurus-docs/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'KenBlasse',
+  projectName: 'obsidiosaurus-docs',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'de'],
   },
 
   stylesheets: [
@@ -81,9 +72,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Obsidiosaurus',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Obsidiosaurus Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -94,12 +85,21 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/release-notes', label: 'Release Notes', position: 'left'},
+        {
+          href: 'https://github.com/KenBlasse/obsidiosaurus',
+          label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Obsidiosaurus. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
