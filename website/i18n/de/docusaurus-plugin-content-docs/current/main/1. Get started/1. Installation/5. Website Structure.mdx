@@ -1,0 +1,71 @@
+
+Jetzt ist es Zeit, über die Struktur deiner Website nachzudenken — also zu entscheiden, welche Docusaurus-Module du einbinden möchtest.
+
+:::note
+
+Es ist jederzeit möglich, Module später hinzuzufügen oder zu entfernen.
+:::
+
+
+## Die erste Frage: Welche Art von Website willst du bauen?
+
+### Option 1: Dokumentations- und Blog-Seite
+
+Der klassische Anwendungsfall: sowohl ein `Docs`- als auch ein `Blog`-Modul einbinden.
+
+### Option 2: Nur Docs
+
+Alternativ kannst du auch nur das Docs-Modul einbinden.
+Mehr Infos findest du [hier](https://docusaurus.io/docs/docs-introduction#docs-only-mode).
+
+### Option 3: Nur Blog
+
+Du kannst auch nur das Blog-Modul nutzen.
+Mehr Infos findest du [hier](https://docusaurus.io/docs/blog#blog-only-mode).
+
+
+## Die zweite Frage: Mehrere Sidebars oder Blogs?
+
+### Mehrere Docs-Sidebars
+
+Für deine Docs hast du die Option, mehrere Sidebars einzubinden — wie auf dieser Website mit `main` und `Sidebar 2*`.
+
+### Mehrere Blogs
+
+Wenn du dich für einen Blog entscheidest, kannst du auch wählen, wie viele. Am häufigsten ist ein einziger Blog, du kannst aber auch mehrere einbinden — wie auf dieser Website mit `Blog` und `Release Notes`.
+
+## Die dritte Frage: Soll deine Website mehrere Sprachen unterstützen?
+
+Obsidiosaurus ermöglicht dir, Mehrsprachigkeit für deine Website direkt aus deinem Obsidian-Vault heraus zu unterstützen.
+
+Für dieses Tutorial erstellen wir eine Website in zwei Sprachen: Englisch (`en`) als Hauptsprache und Deutsch (`de`) als Zweitsprache.
+
+Siehe diese Liste der [ISO-Sprachcodes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) und prüfe bei [Docusaurus](https://docusaurus.io/docs/i18n/introduction), welchen Sprachcode du verwenden musst.
+
+## Vault-Ordnerstruktur
+
+Sobald du die Struktur deiner Website festgelegt hast, lege die entsprechende Ordnerstruktur in Obsidian an.
+
+Zum Beispiel könnte die Ordnerstruktur für eine Website mit einem Docs-Modul, zwei Sidebars und zwei Blogs so aussehen:
+
+```
+.
+├── website
+│   └── ... // deine Docusaurus-Installation
+└── vault
+    ├── assets // dein Ordner für Anhänge
+    ├── docs // FESTER NAME
+    │   ├── sidebar1
+    │   ├── sidebar2
+    │   └── ...
+    ├── blog // FESTER NAME
+    │   └── ... // dein erster Blog
+    ├── second-blog__blog
+    │   └── ... // für weitere Blog-Module '__blog' am Ende anhängen
+    └── ...
+```
+
+:::caution[Feste Namen]
+
+ Die Ordner `docs` und `blog` haben feste Namen.
+ Für einen zweiten Blog kannst du jeden Namen wählen, musst aber `__blog` am Ende anhängen.

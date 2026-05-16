@@ -1,0 +1,308 @@
+# Formatierungs-Showcase
+
+Diese Seite zeigt alle Formatierungs-Funktionen, die Obsidiosaurus v1.2.0 unterstützt.
+
+---
+
+## Textformatierung
+
+**Fetter Text** — `**text**`
+
+*Kursiver Text* — `*text*` oder `_text_`
+
+***Fett und kursiv*** — `***text***`
+
+~~Durchgestrichen~~ — `~~text~~`
+
+Highlighting: ==Hervorgehobener Text== — Syntax `==text==` (wird zu `<mark>`)
+
+`Inline-Code` — `` `code` ``
+
+---
+
+## Überschriften
+
+# H1 — Dokumenttitel
+## H2 — Sektion
+### H3 — Unterabschnitt
+#### H4 — Detail
+##### H5 — Feindetail
+###### H6 — Feinste Ebene
+
+---
+
+## Links
+
+[Externer Link](https://docusaurus.io)
+
+[[formatting_showcase__de|Interner Obsidian-Link]]
+
+---
+
+## Listen
+
+### Ungeordnet
+- Punkt A
+- Punkt B
+  - Verschachtelter Punkt
+  - Noch einer
+    - Dritte Ebene
+- Punkt C
+
+### Geordnet
+1. Erstens
+2. Zweitens
+   1. Verschachtelt geordnet
+   2. Noch einer
+3. Drittens
+
+### Aufgabenliste
+- [ ] Offene Aufgabe
+- [x] Erledigte Aufgabe
+- [ ] Weitere offene Aufgabe
+
+---
+
+## Blockquote
+
+> Das ist ein normales Blockquote.
+> Es kann sich über mehrere Zeilen erstrecken.
+
+---
+
+## Callouts / Admonitions
+
+>[!note] Hinweis
+>Allgemeine Information, die hervorgehoben werden sollte.
+
+>[!tip] Tipp
+>Ein hilfreicher Hinweis oder eine Best Practice.
+
+>[!info] Info
+>Zusätzlicher Hintergrund-Kontext.
+
+>[!warning] Warnung
+>Etwas, bei dem der Nutzer vorsichtig sein sollte.
+
+>[!danger] Achtung
+>Eine kritische Warnung — Datenverlust oder Breaking Changes möglich.
+
+>[!caution] Vorsicht
+>Mit Bedacht vorgehen.
+
+>[!quote] Zitat
+>*„Die beste Dokumentation ist die, die tatsächlich geschrieben wird."*
+
+---
+
+## Tabellen
+
+| Feature         | Obsidian | Docusaurus | Status |
+|-----------------|----------|------------|--------|
+| Fett / Kursiv   | ✅       | ✅         | Nativ |
+| Highlighting    | ✅       | ✅         | Konvertiert |
+| Mermaid         | ✅       | ✅         | Plugin |
+| Kommentare      | ✅       | gefiltert  | Entfernt |
+| Fußnoten        | ✅       | ✅         | Nativ |
+| Aufgaben        | ✅       | ✅         | Nativ |
+
+---
+
+## Codeblöcke
+
+### Inline
+
+Nutze `npm run build`, um das Projekt zu bauen.
+
+### Block (mit Syntax-Highlighting)
+
+```typescript
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("Obsidiosaurus"));
+```
+
+```python
+def convert_markdown(source: str) -> str:
+    """Konvertiert Obsidian-Markdown ins Docusaurus-Format."""
+    return source.replace("==", "<mark>")
+```
+
+```bash
+# Obsidiosaurus-Konvertierung ausführen
+npx obsidiosaurus convert --vault ./vault --output ./website
+```
+
+---
+
+## Diagramme (Mermaid)
+
+Benötigt `@docusaurus/theme-mermaid` — konfiguriert in `docusaurus.config.js`:
+```js
+themes: ['@docusaurus/theme-mermaid'],
+markdown: { mermaid: true }
+```
+
+### Flussdiagramm
+
+```mermaid
+flowchart TD
+    A[Obsidian Vault] --> B{Obsidiosaurus}
+    B --> C[Docusaurus MDX]
+    C --> D[Statische Website]
+    B --> E[Assets]
+    E --> D
+```
+
+### Sequenzdiagramm
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Obsidian
+    participant Obsidiosaurus
+    participant Docusaurus
+
+    User->>Obsidian: Notiz bearbeiten
+    User->>Obsidiosaurus: Konvertieren-Button klicken
+    Obsidiosaurus->>Obsidian: Vault-Dateien lesen
+    Obsidiosaurus->>Docusaurus: Konvertiertes MDX schreiben
+    Docusaurus-->>User: Gerenderte Website
+```
+
+### Klassendiagramm
+
+```mermaid
+classDiagram
+    class MarkdownProcessor {
+        +convertHighlighting(text) string
+        +filterComments(text) string
+        +convertAdmonitions(text) string
+    }
+    class AssetProcessor {
+        +copyAssets(source, target)
+        +resizeImage(path, width)
+    }
+    class MainProcessor {
+        +process(basePath)
+    }
+    MainProcessor --> MarkdownProcessor
+    MainProcessor --> AssetProcessor
+```
+
+### Gantt-Diagramm
+
+```mermaid
+gantt
+    title Obsidiosaurus v1.x Roadmap
+    dateFormat  YYYY-MM-DD
+    section v1.0.0
+    Modernization           :done, 2026-04-10, 2026-04-11
+    section v1.1.0
+    Comment filter          :done, 2026-04-12, 1d
+    Highlighting support    :done, 2026-04-12, 1d
+    Mermaid support         :done, 2026-04-12, 1d
+    section v1.2.0
+    REST API agent trigger  :done, 2026-05-16, 1d
+    Headless conversion     :done, 2026-05-16, 1d
+    Status file polling     :done, 2026-05-16, 1d
+```
+
+### Tortendiagramm
+
+```mermaid
+pie title Obsidiosaurus Feature Coverage
+    "Implemented" : 85
+    "Planned" : 10
+    "Not supported" : 5
+```
+
+---
+
+## Mathematische Gleichungen
+
+Inline-Mathe: $E = mc^2$
+
+Block-Gleichung:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+$$
+
+$$
+\frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+
+---
+
+## Fußnoten
+
+Obsidiosaurus unterstützt Standard-Markdown-Fußnoten.[^1]
+
+Sie werden in Docusaurus-MDX nativ gerendert.[^2]
+
+[^1]: Fußnoten erscheinen automatisch am Ende der Seite.
+[^2]: Keine spezielle Konvertierung nötig — MDX rendert sie out-of-the-box.
+
+---
+
+## Horizontale Linien
+
+Inhalt darüber
+
+---
+
+Inhalt darunter
+
+---
+
+## Kommentare (nur Obsidian)
+
+Kommentare werden mit `%% ... %%` geschrieben und **bei der Konvertierung entfernt** — sie erscheinen nie auf der Website.
+
+Inline-Syntax:
+```
+%% Das ist ein Inline-Kommentar %%
+```
+
+Block-Syntax:
+```
+%%
+Das ist ein
+mehrzeiliger Kommentar
+%%
+```
+
+%% Inline-Kommentar — dieser Text wird entfernt %%
+
+Der Text oben ist ein Inline-Kommentar in Obsidian. Er ist hier nicht sichtbar.
+
+%%
+Block-Kommentar — auch der wird entfernt:
+- Zeile eins
+- Zeile zwei
+%%
+
+Der Text oben ist ein Block-Kommentar in Obsidian. Auch er ist hier nicht sichtbar.
+
+---
+
+## Bilder
+
+Obsidiosaurus konvertiert Bilder zu `.webp` und übernimmt die Größenänderung automatisch.
+
+### Standard-Bild
+![[obsidiosaurus_sidebar_icon.png]]
+
+### Skaliertes Bild (400px Breite)
+![[obsidiosaurus_run_sucess_notifaction_2.png|400]]
+
+---
+
+## iFrames
+
+Externe Inhalte direkt einbetten:
+
+<iframe src="https://docusaurus.io" width="100%" height="400px" />

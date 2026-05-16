@@ -1,0 +1,100 @@
+# Docusaurus-Installation
+
+## Schritt 3: Docusaurus installieren
+
+
+Als Nächstes richten wir Docusaurus ein.
+
+:::caution[Offizielle Docusaurus-Dokumentation]
+
+Für weitere Informationen und detaillierte Anleitungen zu Docusaurus, schau in die [offizielle Dokumentation](https://docusaurus.io/docs).
+Wir decken hier nicht alles ab.
+:::
+
+
+### 1) Docusaurus installieren
+
+Um Docusaurus zu installieren, führe folgenden Befehl aus:
+````
+npx create-docusaurus@latest website classic
+````
+
+:::note
+
+Du kannst für deinen Vault und die Docusaurus-Installation eigene Namen verwenden. In diesem Fall musst du diese aber in den Obsidian-/Obsidiosaurus-Plugin-Einstellungen anpassen.
+Ich empfehle `website` für deine Docusaurus-Installation und `vault` für deinen Obsidian-Vault.
+:::
+
+### 2) Installation überprüfen
+
+Nach dem Ausführen des Installationsbefehls sollte deine Ordnerstruktur etwa so aussehen:
+
+```
+website
+├── blog
+│   └── ...
+├── docs
+│   └── ...
+├── src
+│   ├── components
+│   │   └── ...
+│   ├── css
+│   │   └── custom.css
+│   └── pages
+│       ├── styles.module.css
+│       └── index.js
+├── static
+│   └── img
+├── docusaurus.config.js
+├── package.json
+├── README.md
+├── sidebars.js
+├── babel.config.js
+└── package-lock.json
+```
+
+Um zu prüfen, ob Docusaurus korrekt installiert wurde, starten wir den Docusaurus-Entwicklungsserver:
+
+```
+cd my-website
+npm run start
+```
+
+Standardmäßig öffnet sich dadurch ein Browserfenster unter [http://localhost:3000](http://localhost:3000).
+
+:::caution[Entwicklungsserver beenden]
+
+Vergiss nicht, den Entwicklungsserver mit `CTRL` + `C` im Terminal zu beenden.
+:::
+
+### 4) Die Ordner `blog` und `docs` löschen
+
+Lösche zum Schluss die vorgefertigten Ordner `blog` und `docs`.
+
+```
+website
+├── blog <- ORDNER LÖSCHEN
+│   └── ...
+├── docs <- ORDNER LÖSCHEN
+│   └── ...
+├── src
+│   └── ...
+├── static
+│   └── img
+├── docusaurus.config.js
+├── package.json
+├── README.md
+├── sidebars.js
+├── babel.config.js
+└── package-lock.json
+```
+
+### 5) Fortschritt sichern
+
+Sichere deinen Fortschritt mit einem Git-Commit, im Terminal:
+
+```
+git add .
+git commit -m "Install Docusaurus"
+git push
+```

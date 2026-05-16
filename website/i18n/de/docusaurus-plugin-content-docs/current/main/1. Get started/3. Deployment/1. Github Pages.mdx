@@ -1,0 +1,123 @@
+# Deployment auf GitHub Pages
+
+Für weitere Informationen schau in die [offizielle Doku](https://docusaurus.io/docs/deployment#deploying-to-github-pages).
+
+Wenn du bereits ein GitHub-Repo hast, ist GitHub Pages ein einfacher Weg, deine Docusaurus-Site zu deployen.
+
+:::danger[Öffentliches vs. privates Repository]
+
+Beachte: Mit einem kostenlosen GitHub-Abo kannst du GitHub Pages nur nutzen, wenn dein **Repository öffentlich und damit für jeden im Internet einsehbar ist.** Das heißt, dein **Vault inklusive aller Dateien und Einstellungen — auch Notizen im Draft-Modus — wird vollständig offengelegt.** Wenn dein Repository privat bleiben soll, musst du entweder dein GitHub-Konto upgraden, um GitHub Pages auf einem privaten Repo nutzen zu können, oder eine alternative Deployment-Methode wählen.
+:::
+
+## Docusaurus-Config anpassen
+
+In deiner `docusaurus.config`-Datei:
+```js
+const config = {
+  ...
+  url: 'https://{your-username}.github.io',
+  baseUrl: '/{repository-name}/',
+  ...
+  }
+```
+
+Ersetze `{your-username}` durch deinen GitHub-Usernamen oder deine Organisation und `{repository-name}` durch den tatsächlichen Namen deines Repositories auf GitHub.
+
+## Automatisiertes Deployment mit GitHub Actions
+
+Manuelles Releasen kann zeitraubend sein.
+
+Lege im Root-Verzeichnis unter `.../repository/.github/workflows/` eine `deploy.yml`-Datei an:
+
+```
+{REPOSITORY}/
+└── .github/
+    └── workflows/
+        └── deploy.yml <- Diese Datei anlegen
+```
+
+Wähle eine der beiden Deploy-Methoden: `push auf main-Branch` oder `Tags` — siehe unten.
+
+### Deployment per push auf den main-Branch
+
+Diese Methode wird bei jedem `git push` ausgelöst.
+
+Trage in deine `deploy.yml`:
+
+```yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+          cache-dependency-path: ./website/package-lock.json
+      - name: Install dependencies
+        run: |
+          cd website
+          npm ci
+      - name: Build website
+        run: |
+          cd website
+          npm run build
+
+      # Beliebte Action für Deployment zu GitHub Pages:
+      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Build-Output, der in den `gh-pages`-Branch gepublished wird:
+          publish_dir: ./website/build
+          # Die folgenden Zeilen weisen die Commit-Authorenschaft dem offiziellen
+          # GH-Actions-Bot für Deployments zum `gh-pages`-Branch zu:
+          # https://github.com/actions/checkout/issues/13#issuecomment-724415212
+          # Der GH-Actions-Bot wird standardmäßig genutzt, wenn die beiden Felder leer sind.
+          # Du kannst sie durch deine eigenen User-Credentials ersetzen.
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+```
+
+:::caution[Umbenannter Docusaurus-Ordner]
+
+Wenn du deinen Docusaurus-Ordner umbenannt hast, ersetze `website` mit deinem geänderten Namen.
+:::
+
+### Deployment per Tags
+
+Wenn du nicht bei jedem `git push` deployen willst, kannst du Tags nutzen.
+
+1. Nutze das obige `.yml`-Skript und ändere den ersten Teil der `deploy.yml`:
+
+```yml
+on:
+  push:
+    tags:
+      - "*"
+```
+
+2. Erstelle einen Tag, der zur Version in der `manifest.json`-Datei passt:
+
+```bash
+git tag -a 1.0.1
+git push origin 1.0.1
+```
+
+:::note
+
+ `-a` erzeugt einen [annotated tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
+:::
+
+## GitHub-Repository-Einstellungen anpassen
+
+![github_pages_repository_settings](/assets/github_pages_repository_settings.webp)

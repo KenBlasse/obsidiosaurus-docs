@@ -1,0 +1,32 @@
+# v1.1.0 — Neue Formatierungs-Funktionen
+
+v1.1.0 ergänzt Unterstützung für drei Obsidian-Formatierungs-Features, die bisher nicht konvertiert wurden.
+
+## Was ist neu
+
+### Kommentar-Filter
+Obsidian-Kommentare (``) werden jetzt bei der Konvertierung entfernt — sowohl inline als auch mehrzeilige Block-Kommentare.
+
+```
+
+```
+
+### Highlighting
+`<mark>hervorgehobener Text</mark>` wird zu `<mark>hervorgehobener Text</mark>` konvertiert und rendert mit dem nativen Browser-Highlight-Styling.
+
+### Mermaid-Diagramme
+Mermaid-Codeblöcke werden an Docusaurus durchgereicht. Benötigt `@docusaurus/theme-mermaid` in deiner Docusaurus-Config:
+
+```js
+themes: ['@docusaurus/theme-mermaid'],
+markdown: { mermaid: true }
+```
+
+Unterstützte Diagramm-Typen: flowchart, sequence, class, gantt, pie — und alle weiteren Mermaid-Typen.
+
+### Schon funktioniert (keine Konvertierung nötig)
+- Fußnoten (`[^1]`) — werden von MDX nativ verarbeitet
+- Aufgabenlisten (`- [ ]` / `- [x]`) — werden von MDX nativ verarbeitet
+
+## Bugfix
+- `<mark>` am Zeilenanfang wird jetzt mit `{''}` präfixt, damit MDX 2 den Absatz nicht als Block-Level-JSX-Element parst.

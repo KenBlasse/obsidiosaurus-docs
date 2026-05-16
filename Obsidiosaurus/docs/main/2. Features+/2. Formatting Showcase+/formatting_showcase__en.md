@@ -1,6 +1,6 @@
 # Formatting Showcase
 
-This page demonstrates every formatting feature supported by Obsidiosaurus v1.1.0.
+This page demonstrates every formatting feature supported by Obsidiosaurus v1.2.0.
 
 ---
 
@@ -205,7 +205,9 @@ gantt
     Highlighting support    :done, 2026-04-12, 1d
     Mermaid support         :done, 2026-04-12, 1d
     section v1.2.0
-    Bidirectional links     :active, 2026-04-13, 7d
+    REST API agent trigger  :done, 2026-05-16, 1d
+    Headless conversion     :done, 2026-05-16, 1d
+    Status file polling     :done, 2026-05-16, 1d
 ```
 
 ### Pie Chart

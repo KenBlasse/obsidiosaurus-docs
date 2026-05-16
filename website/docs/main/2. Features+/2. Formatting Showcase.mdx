@@ -1,6 +1,6 @@
 # Formatting Showcase
 
-This page demonstrates every formatting feature supported by Obsidiosaurus v1.1.0.
+This page demonstrates every formatting feature supported by Obsidiosaurus v1.2.0.
 
 ---
 
@@ -14,7 +14,7 @@ This page demonstrates every formatting feature supported by Obsidiosaurus v1.1.
 
 ~~Strikethrough~~ — `~~text~~`
 
-Highlighting: <mark>Highlighted text</mark> — syntax `==text==` (converted to `<mark>`)
+Highlighting: <mark>Highlighted text</mark> — syntax `<mark>text</mark>` (converted to `<mark>`)
 
 `Inline code` — `` `code` ``
 
@@ -219,7 +219,9 @@ gantt
     Highlighting support    :done, 2026-04-12, 1d
     Mermaid support         :done, 2026-04-12, 1d
     section v1.2.0
-    Bidirectional links     :active, 2026-04-13, 7d
+    REST API agent trigger  :done, 2026-05-16, 1d
+    Headless conversion     :done, 2026-05-16, 1d
+    Status file polling     :done, 2026-05-16, 1d
 ```
 
 ### Pie Chart
@@ -272,22 +274,19 @@ Content below
 
 ## Comments (Obsidian-only)
 
-Comments are written with `%% ... %%` and are **removed during conversion** — they never appear on the website.
+Comments are written with `` and are **removed during conversion** — they never appear on the website.
 
 Inline syntax:
 ```
-%% This is an inline comment %%
 ```
 
 Block syntax:
 ```
-%%
-This is a
-multi-line comment
-%%
 ```
 
+
 The text above is an inline comment in Obsidian. It is not visible here.
+
 
 The text above is a block comment in Obsidian. It is also not visible here.
 
@@ -295,11 +294,13 @@ The text above is a block comment in Obsidian. It is also not visible here.
 
 ## Images
 
-### Standard image
-![Obsidiosaurus Logo](/assets/obsidiosaurus_sidebar_icon.webp)
+Obsidiosaurus converts images to `.webp` and handles resizing automatically.
 
-### Resized image
-![Success notification](/assets/obsidiosaurus_run_sucess_notifaction_2_400.webp)
+### Standard image
+![[obsidiosaurus_sidebar_icon.png]]
+
+### Resized image (400px width)
+![[obsidiosaurus_run_sucess_notifaction_2.png|400]]
 
 ---
 

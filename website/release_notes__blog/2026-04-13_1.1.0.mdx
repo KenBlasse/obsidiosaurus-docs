@@ -5,19 +5,14 @@ v1.1.0 adds support for three Obsidian formatting features that were previously 
 ## What's new
 
 ### Comment Filter
-Obsidian comments (`%% ... %%`) are now stripped during conversion — both inline and multi-line block comments.
+Obsidian comments (``) are now stripped during conversion — both inline and multi-line block comments.
 
 ```
-%% This will not appear on the website %%
 
-%%
-Neither will this
-multi-line block
-%%
 ```
 
 ### Highlighting
-`==highlighted text==` is converted to `<mark>highlighted text</mark>`, which renders with native browser highlight styling.
+`<mark>highlighted text</mark>` is converted to `<mark>highlighted text</mark>`, which renders with native browser highlight styling.
 
 ### Mermaid Diagrams
 Mermaid code blocks are passed through to Docusaurus. Requires `@docusaurus/theme-mermaid` in your Docusaurus config:

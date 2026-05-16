@@ -1,0 +1,46 @@
+# v1.2.0 — Support für KI-Agenten und Automatisierung
+
+v1.2.0 macht Obsidiosaurus per KI-Agent und externer Automatisierung auslösbar — der Build kann jetzt über eine REST-API ohne Nutzerinteraktion gestartet werden.
+
+## Was ist neu
+
+### Headless-Konvertierung via Local REST API
+
+Es werden jetzt zwei Obsidian-Commands bereitgestellt, die über das [Local REST API Plugin](https://github.com/coddingtonbear/obsidian-local-rest-api) aufgerufen werden können:
+
+| Command ID | Verhalten |
+|---|---|
+| `obsidiosaurus:run` | Führt die Konvertierung **ohne** Bestätigungs-Modal aus — gedacht für unbeaufsichtigten Agent-Einsatz. |
+| `obsidiosaurus:run-with-confirm` | Zeigt das Preview-Modal und wartet auf einen User-Klick — entspricht dem Ribbon-Icon. |
+
+### Status-Datei zum Pollen
+
+Nach jedem Lauf (oder Versuch) schreibt das Plugin eine Status-Datei nach `.obsidiosaurus/last-run.json` innerhalb des Vaults. Agenten können diese Datei pollen, um den Abschluss zu prüfen und Fehler aufzusammeln.
+
+```json
+{
+  "status": "running" | "success" | "error",
+  "startedAt": "2026-05-16T11:52:20.051Z",
+  "finishedAt": "2026-05-16T11:52:20.064Z",
+  "filesToProcess": 1,
+  "filesToDelete": 1,
+  "error": { "message": "...", "stack": "..." },
+  "version": "1.2.0"
+}
+```
+
+Die Zähler (`filesToProcess`, `filesToDelete`) entsprechen dem Change-Preview-Snapshot vor dem Lauf, nicht zwingend der exakten Anzahl geschriebener Dateien.
+
+### Beispiel-Workflow für Agenten
+
+```bash
+API_KEY="<dein local-rest-api Key>"
+
+# 1. Build starten (kehrt sofort zurück)
+curl -sk -X POST -H "Authorization: Bearer $API_KEY" \
+  https://localhost:27124/commands/obsidiosaurus:run/
+
+# 2. Status pollen, bis fertig
+curl -sk -H "Authorization: Bearer $API_KEY" \
+  https://localhost:27124/vault/.obsidiosaurus/last-run.json
+```

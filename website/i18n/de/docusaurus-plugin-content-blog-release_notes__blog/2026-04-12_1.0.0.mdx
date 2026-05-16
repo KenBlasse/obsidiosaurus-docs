@@ -1,0 +1,30 @@
+# v1.0.0 — Modernisierung
+
+Nach einer langen Pause beim Originalprojekt ist v1.0.0 eine vollständige Modernisierung der Codebase — gleicher Funktionsumfang, neu aufgebautes Fundament.
+
+## Was ist neu
+
+### Codebase
+- TypeScript-Upgrade von 4.7 auf 5.4
+- `mainProcessor.ts` von 1021 Zeilen in dedizierte Module refaktoriert: `fileScanner.ts`, `fileInfoBuilder.ts`, `changeTracker.ts`, `assetProcessor.ts`
+- pino-Logger durch `console` ersetzt (keine Node-only-Abhängigkeit mehr in Electron)
+- GraphicsMagick (`gm`) durch Canvas-API ersetzt — keine System-Abhängigkeit mehr nötig
+- `augmentPathForMacOS()` entfernt — cross-platform per Default
+
+### Docusaurus-v3-Kompatibilität
+- Output von `.md` auf `.mdx` umgestellt
+- Admonition-Syntax auf v3-Format aktualisiert: `:::note[Title]`
+- `future: { v4: true }`-kompatibel — `.md` wird als CommonMark, `.mdx` als MDX behandelt
+
+### Bugfixes
+- **#13 / #18** — Asset-Dateinamen mit führenden Ziffern wurden beim Sanitizing beschädigt
+- **#14** — ENOENT-Crash beim Kopieren von Assets für geänderte Dateien (veraltete `assetJson`-Einträge)
+- **#16** — Umbenannte Dateien hinterließen verwaiste Seiten im Output
+- `[!QUOTE]`-Callout wird jetzt korrekt zu einem Blockquote konvertiert
+
+### Plugin-Setup
+- `vaultPath` wird jetzt dynamisch aus Obsidian gelesen (`vault.adapter.getBasePath()`) — kein hartcodierter `"vault"`-Ordnername mehr
+- Als BRAT-installierbares Plugin released — mit `main.js`, `manifest.json`, `styles.css` im Anhang
+
+### Tests
+- 33 Tests, die `markdownProcessor`, `fileInfoBuilder`, `changeTracker` und `assetProcessor` abdecken
